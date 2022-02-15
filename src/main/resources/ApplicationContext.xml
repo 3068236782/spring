@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- services -->
+
+<!--    <bean id="petStore" class="org.springframework.samples.jpetstore.services.PetStoreServiceImpl">-->
+<!--        <property name="accountDao" ref="accountDao"/>-->
+<!--        <property name="itemDao" ref="itemDao"/>-->
+<!--        &lt;!&ndash; additional collaborators and configuration for this bean go here &ndash;&gt;-->
+<!--    </bean>-->
+
+
+    <bean id="person" class="com.xkz.entity.Person">
+        <property name="id" value="1"/>
+        <property name="name" value="张三" />
+        <property name="age" value="22" />
+        <property name="money" value="68888888" />
+    </bean>
+
+
+
+    <bean id="person1" class="com.xkz.factory.PersonFactory" factory-method="SelectFac">
+        <constructor-arg name="id" value="1"/>
+        <constructor-arg name="name" value="张三" />
+        <constructor-arg name="age" value="22" />
+        <constructor-arg name="money" value="68888888" />
+
+    </bean>
+
+
+    <bean id="user" class="com.xkz.entity.User" >
+        <property name="id" value="1" />
+        <property name="name" value="李四" />
+    </bean>
+
+    <bean id="person2" class="com.xkz.entity.Person">
+        <constructor-arg name="id" value="1"/>
+        <constructor-arg name="name" value="张三" />
+        <constructor-arg name="age" value="22" />
+        <constructor-arg name="money" value="68888888" />
+        <constructor-arg name="user" ref="user" />
+    </bean>
+
+
+
+
+    <!-- more bean definitions for services go here -->
+
+</beans>
