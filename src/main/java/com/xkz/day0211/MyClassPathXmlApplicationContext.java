@@ -6,7 +6,6 @@ import org.dom4j.io.SAXReader;
 import org.apache.commons.lang.StringUtils;
 
 import org.dom4j.Element;
-import java.io.InputStream;
 import java.util.List;
 
 /**
@@ -49,7 +48,7 @@ public class MyClassPathXmlApplicationContext {
         SAXReader saxReader = new SAXReader();
         //如果xml文件名为空，则文件路径为空
         if (StringUtils.isEmpty(xmlPath)) {
-            new Exception("文件路径为空");
+            new Exception("文件路径为 空");
         }
         //所以这里就不用在传2个参数了
 
