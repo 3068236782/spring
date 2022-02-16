@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@Service
+@Service
 public class Persion {
 
     @Value("0")
