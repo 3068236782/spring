@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           https://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/aop
+                           https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="demo" class="com.xkz.day0216.Demo" />
+
+    <bean id="before" class="com.xkz.day0216.MyBeforeAdvice" />
+
+    <bean id="after" class="com.xkz.day0216.MyAfterAdvice" />
+
+    <aop:config>
+        <aop:pointcut id="mypoint1" expression="execution(* com.xkz.day0216.Demo.demo1())" />
+        <aop:advisor advice-ref="before" pointcut-ref="mypoint1" id="mybefore1" />
+        <aop:advisor advice-ref="after" pointcut-ref="mypoint1" id="myafter1" />
+    </aop:config>
+
+    <aop:config>
+        <aop:pointcut id="mypoint2" expression="execution(* com.xkz.day0216.Demo.demo2())" />
+        <aop:advisor advice-ref="before" pointcut-ref="mypoint2" id="mybefore2" />
+        <aop:advisor advice-ref="after" pointcut-ref="mypoint2" id="myafter2" />
+    </aop:config>
+
+    <aop:config>
+        <aop:pointcut id="mypoint3" expression="execution(* com.xkz.day0216.Demo.demo3())" />
+        <aop:advisor advice-ref="before" pointcut-ref="mypoint3" id="mybefore3" />
+        <aop:advisor advice-ref="after" pointcut-ref="mypoint3" id="myafter3" />
+    </aop:config>
+
+</beans>

@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Scope;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,6 +15,7 @@ import javax.annotation.PreDestroy;
  * @Description:
  */
 //@Scope("prototype")
+@Resource
 public class BeanScope {
 
     int a ;
